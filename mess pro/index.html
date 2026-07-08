@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Annapurna Delights | Home Style Mess & Tiffin Service in Ghamaria</title>
+    <meta name="description" content="Annapurna Delights is a trusted home-style mess in Ghamaria serving fresh, hygienic, and delicious meals every day with care and consistency." />
+    <meta name="keywords" content="home style mess, tiffin service, healthy meals, lunch delivery, premium food delivery" />
+    <meta name="theme-color" content="#FF6B35" />
+    <meta property="og:title" content="Annapurna Delights" />
+    <meta property="og:description" content="Fresh home-style meals delivered daily with warmth, quality, and speed in Ghamaria." />
+    <meta property="og:type" content="website" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#FF6B35',
+              secondary: '#2ECC71',
+              accent: '#F4C542',
+              ink: '#111111',
+              mist: '#F8F9FA'
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Poppins', 'sans-serif']
+            }
+          }
+        }
+      };
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Annapurna Delights",
+        "description": "Home style mess and tiffin service in Ghamaria, Jharkhand, India.",
+        "telephone": "+91-96082-87327",
+        "address": {
+          "streetAddress": "12, Market Lane",
+          "addressLocality": "Ghamaria",
+          "addressRegion": "Jharkhand",
+          "postalCode": "835215",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$",
+        "servesCuisine": ["Indian", "Home Style", "Tiffin"],
+        "url": "https://example.com"
+      }
+    </script>
+  </head>
+  <body>
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-ring"></div>
+      <p>Preparing your next meal experience</p>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header class="glass-nav sticky top-0 z-50">
+      <nav class="container mx-auto flex items-center justify-between px-4 py-4 md:px-8">
+        <a href="index.html" class="brand-mark flex items-center gap-3 font-display text-lg font-semibold text-ink">
+          <img src="images/logo.png" alt="Annapurna Delights logo" class="brand-logo" />
+          <span>Annapurna Delights</span>
+        </a>
+        <button class="mobile-toggle md:hidden" id="mobileToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="hidden items-center gap-8 md:flex" id="navMenu">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="menu.html" class="nav-link">Menu</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="contact.html" class="btn btn-primary">Order Now</a>
+        </div>
+      </nav>
+      <div class="mobile-menu md:hidden" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <section class="live-menu-ticker" aria-label="Live Menu Ticker">
+      <div class="ticker-shell glass-panel">
+        <div class="ticker-badge"><span class="ticker-dot"></span> LIVE MENU</div>
+        <div class="ticker-viewport">
+          <div class="ticker-track" id="tickerTrack">
+            <div class="ticker-content" id="tickerContent"></div>
+            <div class="ticker-content" id="tickerClone" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="ticker-meta">
+          <div class="ticker-clock" id="tickerClock">--:--:--</div>
+          <div class="ticker-countdown" id="tickerCountdown">Loading menu…</div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero min-h-screen overflow-hidden px-4 pb-20 pt-24 md:px-8 lg:px-16">
+        <div id="particles-js"></div>
+        <div class="hero-orb hero-orb-one"></div>
+        <div class="hero-orb hero-orb-two"></div>
+        <div class="container mx-auto grid min-h-[80vh] items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+          <div class="max-w-3xl" data-aos="fade-right">
+            <div class="badge-row mb-6 flex flex-wrap items-center gap-3 text-sm text-ink/80">
+              <span class="badge-chip">Chef-crafted</span>
+              <span class="badge-chip">Fresh by 7 AM</span>
+              <span class="badge-chip">Same-day delivery</span>
+            </div>
+            <h1 class="text-5xl font-black leading-[0.95] sm:text-6xl lg:text-7xl font-display text-ink">
+              Home Style Food, Delivered Fresh Every Day
+            </h1>
+            <p class="mt-6 text-lg leading-8 text-slate-600 max-w-2xl">
+              From wholesome breakfast boxes to evening comfort meals, Annapurna Delights brings the warmth of a family kitchen to your doorstep with premium quality and effortless convenience.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="contact.html" class="btn btn-primary">Order Now</a>
+              <a href="menu.html" class="btn btn-secondary">View Today's Menu</a>
+            </div>
+            <div class="mt-10 flex flex-wrap gap-6 text-sm text-slate-600">
+              <div class="stat-card"><strong>1000+</strong><span>Happy customers</span></div>
+              <div class="stat-card"><strong>5000+</strong><span>Meals served</span></div>
+              <div class="stat-card"><strong>4.9/5</strong><span>Average rating</span></div>
+            </div>
+          </div>
+          <div class="relative" data-aos="fade-left">
+            <div class="hero-card glass-panel">
+              <div class="floating-veg veg-1"></div>
+              <div class="floating-veg veg-2"></div>
+              <div class="floating-steam"></div>
+              <svg viewBox="0 0 600 600" class="w-full h-auto" aria-label="Illustration of home style meal and tiffin">
+                <rect x="70" y="90" width="460" height="420" rx="36" fill="#FFF8F1" />
+                <rect x="150" y="160" width="300" height="220" rx="28" fill="#FF6B35" opacity="0.95" />
+                <rect x="180" y="200" width="240" height="140" rx="20" fill="#fff" opacity="0.86" />
+                <path d="M180 260c50-70 110-110 180-110 40 0 70 22 90 58" stroke="#2ECC71" stroke-width="12" fill="none" stroke-linecap="round" />
+                <circle cx="230" cy="370" r="54" fill="#F4C542" opacity="0.95" />
+                <circle cx="370" cy="380" r="42" fill="#2ECC71" opacity="0.92" />
+                <path d="M300 100c0-36 22-60 54-60" stroke="#111" stroke-width="10" fill="none" stroke-linecap="round" />
+                <path d="M250 470h160" stroke="#111" stroke-width="10" stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-indicator" aria-label="Scroll down">
+          <span></span>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="section py-24" id="about">
+        <div class="container mx-auto grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div data-aos="fade-right">
+            <p class="section-eyebrow">Our Story</p>
+            <h2 class="section-title">We preserve the comfort of home, delivered with a refined touch.</h2>
+            <p class="section-copy mt-6">
+              Annapurna Delights is a trusted home-style mess located in Ghamaria, dedicated to serving fresh, hygienic, and delicious meals every day. We believe in providing healthy, affordable, and homemade food that feels just like home. Whether you're a student, working professional, or family, our mission is to deliver quality meals with care and consistency.
+            </p>
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="info-card">
+                <h3>Mission</h3>
+                <p>To make healthy home-style meals an effortless part of modern life.</p>
+              </div>
+              <div class="info-card">
+                <h3>Vision</h3>
+                <p>To become the most trusted meal partner for comfort, taste, and care.</p>
+              </div>
+            </div>
+          </div>
+          <div class="grid gap-6" data-aos="fade-left">
+            <div class="glass-panel p-8">
+              <div class="grid gap-6 sm:grid-cols-2">
+                <div>
+                  <div class="counter" data-count="12">0</div>
+                  <p class="mt-2 text-sm text-slate-600">Years of experience</p>
+                </div>
+                <div>
+                  <div class="counter" data-count="25000">0</div>
+                  <p class="mt-2 text-sm text-slate-600">Meals prepared</p>
+                </div>
+                <div>
+                  <div class="counter" data-count="800">0</div>
+                  <p class="mt-2 text-sm text-slate-600">Students served</p>
+                </div>
+                <div>
+                  <div class="counter" data-count="6">0</div>
+                  <p class="mt-2 text-sm text-slate-600">Cities covered</p>
+                </div>
+              </div>
+            </div>
+            <div class="glass-panel p-8">
+              <div class="flex items-center gap-4">
+                <div class="chef-avatar"></div>
+                <div>
+                  <h3 class="font-display text-xl font-semibold">Rahul Mandal</h3>
+                  <p class="text-sm text-slate-600">Owner & Founder</p>
+                </div>
+              </div>
+              <p class="mt-4 text-slate-600">Every menu is balanced for flavor, nutrition, and comfort, inspired by generations of family recipes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section py-24">
+        <div class="container mx-auto">
+          <div class="max-w-2xl" data-aos="fade-up">
+            <p class="section-eyebrow">Why Choose Annapurna Delights</p>
+            <h2 class="section-title">Premium care in every meal, without the luxury markup.</h2>
+          </div>
+          <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <article class="feature-card glass-panel" data-aos="fade-up">
+              <i class="fa-solid fa-seedling"></i>
+              <h3>Fresh Ingredients</h3>
+              <p>Seasonal vegetables, handpicked spices, and farm-fresh produce in every box.</p>
+            </article>
+            <article class="feature-card glass-panel" data-aos="fade-up" data-aos-delay="100">
+              <i class="fa-solid fa-house-chimney"></i>
+              <h3>Home Style Taste</h3>
+              <p>Comforting flavors and balanced portions that feel like your favorite kitchen.</p>
+            </article>
+            <article class="feature-card glass-panel" data-aos="fade-up" data-aos-delay="200">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <h3>Healthy & Balanced</h3>
+              <p>Nutrition-first meals with protein-rich curries, grains, and fresh sides.</p>
+            </article>
+            <article class="feature-card glass-panel" data-aos="fade-up" data-aos-delay="300">
+              <i class="fa-solid fa-bolt"></i>
+              <h3>Fast Delivery</h3>
+              <p>Tracked delivery windows and punctual service from kitchen to doorstep.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Today's Menu Section -->
+      <section class="section py-24">
+        <div class="container mx-auto">
+          <div class="flex flex-wrap items-end justify-between gap-4" data-aos="fade-up">
+            <div class="max-w-2xl">
+              <p class="section-eyebrow">Today's Fresh Menu</p>
+              <h2 class="section-title">Enjoy freshly prepared home-style meals made with quality ingredients, cooked daily with hygiene and care.</h2>
+            </div>
+            <a href="menu.html" class="text-sm font-semibold text-primary">See full menu</a>
+          </div>
+
+          <div class="mt-10 grid gap-6 xl:grid-cols-3">
+            <article class="menu-card glass-panel premium-menu-card" data-aos="fade-up">
+              <div class="menu-badge">Breakfast</div>
+              <div class="mt-4 text-sm font-semibold text-slate-500">7:00 AM – 9:30 AM</div>
+              <h3 class="mt-3 text-xl font-semibold text-ink">Fresh Morning Comfort</h3>
+              <ul class="mt-4">
+                <li>Poha / Upma (Changes Daily)</li>
+                <li>Bread & Butter</li>
+                <li>Tea / Coffee</li>
+                <li>Banana</li>
+                <li>Boiled Egg (Optional)</li>
+              </ul>
+              <a href="contact.html" class="btn btn-secondary mt-6">Order Breakfast</a>
+            </article>
+
+            <article class="menu-card glass-panel premium-menu-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="menu-badge">Lunch</div>
+              <div class="mt-4 text-sm font-semibold text-slate-500">12:00 PM – 2:30 PM</div>
+              <h3 class="mt-3 text-xl font-semibold text-ink">Balanced Midday Meals</h3>
+              <ul class="mt-4">
+                <li>Rice</li>
+                <li>Dal</li>
+                <li>Seasonal Sabzi</li>
+                <li>Unlimited Roti</li>
+                <li>Salad</li>
+                <li>Pickle</li>
+                <li>Papad</li>
+              </ul>
+              <a href="contact.html" class="btn btn-secondary mt-6">Order Lunch</a>
+            </article>
+
+            <article class="menu-card glass-panel premium-menu-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="menu-badge">Dinner</div>
+              <div class="mt-4 text-sm font-semibold text-slate-500">7:30 PM – 10:00 PM</div>
+              <h3 class="mt-3 text-xl font-semibold text-ink">Comforting Evening Plates</h3>
+              <ul class="mt-4">
+                <li>Rice</li>
+                <li>Roti</li>
+                <li>Dal</li>
+                <li>Seasonal Sabzi</li>
+                <li>Paneer / Soyabean Curry (Selected Days)</li>
+                <li>Salad</li>
+                <li>Pickle</li>
+              </ul>
+              <a href="contact.html" class="btn btn-secondary mt-6">Order Dinner</a>
+            </article>
+          </div>
+
+          <div class="special-card glass-panel mt-10 p-8" data-aos="fade-up">
+            <div class="special-badge">Chef's Special</div>
+            <div class="mt-6 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+              <div>
+                <p class="section-eyebrow">Today's Special</p>
+                <h3 class="mt-3 text-2xl font-semibold text-ink">Sunday Special</h3>
+                <p class="mt-3 text-lg text-slate-600">Chicken Curry + Jeera Rice</p>
+              </div>
+              <div class="special-plate">A</div>
+            </div>
+          </div>
+
+          <div class="mt-10 rounded-[24px] border border-white/60 bg-white/70 p-6 shadow-[0_20px_45px_rgba(17,17,17,0.06)] backdrop-blur-xl" data-aos="fade-up">
+            <div class="flex items-center justify-between gap-4 flex-wrap">
+              <h3 class="text-xl font-semibold text-ink">Weekly Special Menu</h3>
+              <div class="feature-pills">
+                <span class="feature-pill">Freshly Cooked Daily</span>
+                <span class="feature-pill">Hygienic Kitchen</span>
+                <span class="feature-pill">Unlimited Rice & Roti</span>
+                <span class="feature-pill">Healthy Home Style Food</span>
+                <span class="feature-pill">Quality Ingredients</span>
+              </div>
+            </div>
+            <div class="weekly-special-grid mt-6">
+              <div class="week-item">Monday — Rajma Rice</div>
+              <div class="week-item">Tuesday — Chole Bhature</div>
+              <div class="week-item">Wednesday — Veg Biryani</div>
+              <div class="week-item">Thursday — Paneer Butter Masala</div>
+              <div class="week-item">Friday — Mix Veg + Jeera Rice</div>
+              <div class="week-item">Saturday — Fried Rice + Manchurian</div>
+              <div class="week-item">Sunday — Chicken Curry / Paneer Special</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Weekly Menu Section -->
+      <section class="section py-24">
+        <div class="container mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div data-aos="fade-right">
+            <p class="section-eyebrow">Weekly Menu</p>
+            <h2 class="section-title">An evolving weekly plan designed for consistency and variety.</h2>
+            <p class="section-copy mt-6">Monday through Sunday, we rotate seasonal favorites and wholesome staples so your meals stay exciting without sacrificing comfort.</p>
+          </div>
+          <div class="glass-panel p-8" data-aos="fade-left">
+            <div class="weekly-grid">
+              <div>Monday</div><div>Dal, Rice, Bhindi Fry</div>
+              <div>Tuesday</div><div>Paneer Wrap & Salad</div>
+              <div>Wednesday</div><div>Chicken Curry & Jeera Rice</div>
+              <div>Thursday</div><div>Vegetable Biryani Bowl</div>
+              <div>Friday</div><div>Egg Bhurji & Roti</div>
+              <div>Saturday</div><div>Special Thali</div>
+              <div>Sunday</div><div>Family Style Feast</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section py-24">
+        <div class="container mx-auto">
+          <div class="max-w-2xl" data-aos="fade-up">
+            <p class="section-eyebrow">Pricing</p>
+            <h2 class="section-title">Flexible plans for every rhythm of life.</h2>
+          </div>
+          <div class="mt-12 grid gap-6 lg:grid-cols-3">
+            <article class="pricing-card glass-panel premium-pricing" data-aos="fade-up">
+              <div class="price-tag">Daily Plan</div>
+              <div class="price">₹120<span>/day</span></div>
+              <p class="mt-3 text-sm text-slate-600">Fresh lunch and dinner with wholesome staples.</p>
+              <ul class="mt-5">
+                <li>Fresh Lunch</li>
+                <li>Fresh Dinner</li>
+                <li>Rice</li>
+                <li>Unlimited Roti</li>
+                <li>Dal</li>
+                <li>Seasonal Sabzi</li>
+                <li>Salad</li>
+                <li>Pickle</li>
+                <li>Hygienic Packaging</li>
+              </ul>
+              <a href="contact.html" class="btn btn-secondary mt-6">Order Today</a>
+            </article>
+
+            <article class="pricing-card featured glass-panel premium-pricing" data-aos="fade-up" data-aos-delay="100">
+              <div class="recommended">Save ₹40 Every Week</div>
+              <div class="price-tag">Weekly Plan</div>
+              <div class="price">₹800<span>/week</span></div>
+              <p class="mt-3 text-sm text-slate-600">Includes everything in the daily plan plus priority support.</p>
+              <ul class="mt-5">
+                <li>Priority Delivery</li>
+                <li>One Special Meal Every Week</li>
+                <li>Flexible Delivery Timing</li>
+                <li>Freshly Cooked Every Day</li>
+                <li>Hygienic Kitchen</li>
+              </ul>
+              <a href="contact.html" class="btn btn-primary mt-6">Choose Weekly</a>
+            </article>
+
+            <article class="pricing-card featured glass-panel premium-pricing featured-large" data-aos="fade-up" data-aos-delay="200">
+              <div class="recommended">⭐ MOST POPULAR</div>
+              <div class="recommended secondary">Save ₹600 Every Month</div>
+              <div class="price-tag">⭐ Monthly Plan</div>
+              <div class="price">₹3000<span>/month</span></div>
+              <p class="mt-3 text-sm text-slate-600">The best value for students and families seeking consistency.</p>
+              <ul class="mt-5">
+                <li>30 Days Fresh Meals</li>
+                <li>Free Delivery</li>
+                <li>Priority Customer Support</li>
+                <li>Festival Special Meals</li>
+                <li>Best Value for Students</li>
+                <li>Dedicated Customer Assistance</li>
+              </ul>
+              <a href="contact.html" class="btn btn-primary mt-6">Subscribe Now</a>
+            </article>
+          </div>
+
+          <div class="mt-10 rounded-[24px] border border-white/60 bg-white/70 p-6 shadow-[0_20px_45px_rgba(17,17,17,0.06)] backdrop-blur-xl" data-aos="fade-up">
+            <div class="flex flex-wrap gap-3 text-sm font-semibold text-slate-600">
+              <span class="feature-pill">No Hidden Charges</span>
+              <span class="feature-pill">Freshly Cooked Every Day</span>
+              <span class="feature-pill">Hygienic Kitchen</span>
+              <span class="feature-pill">Flexible Payment Options</span>
+              <span class="feature-pill">Easy Cancellation</span>
+            </div>
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+              <span class="payment-pill">UPI</span>
+              <span class="payment-pill">PhonePe</span>
+              <span class="payment-pill">Google Pay</span>
+              <span class="payment-pill">Paytm</span>
+              <span class="payment-pill">Debit Card</span>
+              <span class="payment-pill">Credit Card</span>
+              <span class="payment-pill">Net Banking</span>
+            </div>
+            <p class="mt-6 text-sm text-slate-600">Prices are inclusive of all taxes. Menu may vary depending on seasonal availability.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section class="section py-24">
+        <div class="container mx-auto">
+          <div class="max-w-2xl" data-aos="fade-up">
+            <p class="section-eyebrow">Gallery</p>
+            <h2 class="section-title">Moments of texture, color, and everyday comfort.</h2>
+          </div>
+          <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="gallery-card glass-panel" data-aos="zoom-in">
+              <div class="gallery-image image-one"></div>
+              <h3>Fresh breakfast spreads</h3>
+            </div>
+            <div class="gallery-card glass-panel" data-aos="zoom-in" data-aos-delay="100">
+              <div class="gallery-image image-two"></div>
+              <h3>Lunch boxes with care</h3>
+            </div>
+            <div class="gallery-card glass-panel" data-aos="zoom-in" data-aos-delay="200">
+              <div class="gallery-image image-three"></div>
+              <h3>Evening comfort meals</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="section py-24">
+        <div class="container mx-auto">
+          <div class="max-w-2xl" data-aos="fade-up">
+            <p class="section-eyebrow">Loved by Customers</p>
+            <h2 class="section-title">The kind of service people recommend to their whole circle.</h2>
+          </div>
+          <div class="mt-12 swiper testimonial-slider" data-aos="fade-up">
+            <div class="swiper-wrapper">
+              <article class="swiper-slide glass-panel p-8">
+                <div class="flex items-center gap-3 text-accent">5/5</div>
+                <p class="mt-4 text-slate-600">“Elegant, dependable, and genuinely delicious. It feels like a premium service designed around busy families.”</p>
+                <div class="mt-6 flex items-center gap-4">
+                  <div class="testimonial-avatar"></div>
+                  <div>
+                    <h3 class="font-semibold">Maya R.</h3>
+                    <p class="text-sm text-slate-500">Verified member</p>
+                  </div>
+                </div>
+              </article>
+              <article class="swiper-slide glass-panel p-8">
+                <div class="flex items-center gap-3 text-accent">5/5</div>
+                <p class="mt-4 text-slate-600">“The food is fresh by the morning, the portions are generous, and the packaging is beautiful.”</p>
+                <div class="mt-6 flex items-center gap-4">
+                  <div class="testimonial-avatar alt"></div>
+                  <div>
+                    <h3 class="font-semibold">Sanjay P.</h3>
+                    <p class="text-sm text-slate-500">Verified member</p>
+                  </div>
+                </div>
+              </article>
+              <article class="swiper-slide glass-panel p-8">
+                <div class="flex items-center gap-3 text-accent">5/5</div>
+                <p class="mt-4 text-slate-600">“The weekly plan makes my schedule effortless. I trust them completely for lunch and dinner.”</p>
+                <div class="mt-6 flex items-center gap-4">
+                  <div class="testimonial-avatar"></div>
+                  <div>
+                    <h3 class="font-semibold">Aditi K.</h3>
+                    <p class="text-sm text-slate-500">Verified member</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chef Section -->
+      <section class="section py-24">
+        <div class="container mx-auto grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div data-aos="fade-right">
+            <p class="section-eyebrow">Meet the Chef</p>
+            <h2 class="section-title">A culinary voice shaped by tradition, precision, and warmth.</h2>
+            <p class="section-copy mt-6">Rahul Mandal brings together years of hands-on kitchen experience and a simple philosophy: serve fresh, hygienic, home-style meals that feel deeply familiar and effortlessly comforting.</p>
+            <ul class="mt-6 space-y-3 text-slate-600">
+              <li><i class="fa-solid fa-award text-primary"></i> 12 years of culinary experience</li>
+              <li><i class="fa-solid fa-medal text-primary"></i> Certified in nutrition-led meal design</li>
+              <li><i class="fa-solid fa-star text-primary"></i> Featured in premium food wellness circles</li>
+            </ul>
+          </div>
+          <div class="glass-panel p-8" data-aos="fade-left">
+            <div class="chef-portrait"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process Section -->
+      <section class="section py-24">
+        <div class="container mx-auto">
+          <div class="max-w-2xl" data-aos="fade-up">
+            <p class="section-eyebrow">How It Works</p>
+            <h2 class="section-title">A simple, seamless process from planning to your doorstep.</h2>
+          </div>
+          <div class="mt-12 grid gap-6 md:grid-cols-5">
+            <article class="process-card glass-panel" data-aos="fade-up">1. Choose Plan</article>
+            <article class="process-card glass-panel" data-aos="fade-up" data-aos-delay="100">2. Cooking</article>
+            <article class="process-card glass-panel" data-aos="fade-up" data-aos-delay="200">3. Packing</article>
+            <article class="process-card glass-panel" data-aos="fade-up" data-aos-delay="300">4. Delivery</article>
+            <article class="process-card glass-panel" data-aos="fade-up" data-aos-delay="400">5. Enjoy</article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="section py-24">
+        <div class="container mx-auto grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div data-aos="fade-right">
+            <p class="section-eyebrow">Frequently Asked Questions</p>
+            <h2 class="section-title">Everything you need to know before ordering.</h2>
+            <p class="section-copy mt-6">We keep the process elegant and clear so you can focus on the meal itself.</p>
+          </div>
+          <div class="space-y-4" data-aos="fade-left">
+            <details class="faq-item glass-panel p-6">
+              <summary>How early should I place my order?</summary>
+              <p class="mt-3 text-slate-600">Same-day orders are welcome, but placing your plan a day earlier ensures the freshest preparation.</p>
+            </details>
+            <details class="faq-item glass-panel p-6">
+              <summary>Do you customize spice levels?</summary>
+              <p class="mt-3 text-slate-600">Yes. We offer mild, medium, and spicy variants for most dishes.</p>
+            </details>
+            <details class="faq-item glass-panel p-6">
+              <summary>Is the food suitable for students and professionals?</summary>
+              <p class="mt-3 text-slate-600">Absolutely. Our menus are balanced, filling, and designed for regular schedules.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer py-16">
+      <div class="container mx-auto grid gap-10 lg:grid-cols-[1.1fr_0.9fr_0.8fr]">
+        <div>
+          <h3 class="font-display text-2xl font-semibold">Annapurna Delights</h3>
+          <p class="mt-4 max-w-md text-slate-600">Fresh meals, prepared with warmth and delivered with precision. Premium comfort, every single day.</p>
+          <div class="mt-6 flex gap-4 text-xl">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-semibold">Quick Links</h4>
+          <ul class="mt-4 space-y-2 text-slate-600">
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold">Contact</h4>
+          <ul class="mt-4 space-y-2 text-slate-600">
+            <li><i class="fa-solid fa-phone"></i> +91 96082 87327</li>
+            <li><i class="fa-solid fa-envelope"></i> hello@annapurnadelights.com</li>
+            <li><i class="fa-solid fa-location-dot"></i> Ghamaria, Jharkhand, India</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <div class="floating-actions" aria-label="Floating actions">
+      <button class="floating-btn top" id="scrollTop" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+      <a href="https://wa.me/919608287327" class="floating-btn whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="tel:+919608287327" class="floating-btn call" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+    </div>
+
+    <div class="promo-banner" id="promoBanner">
+      <p>Today’s special: Paneer Biryani + Mint Cooler — 20% off this evening.</p>
+      <button id="closePromo">×</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.0/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

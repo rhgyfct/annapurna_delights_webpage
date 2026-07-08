@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Annapurna Delights | Home Style Mess & Tiffin Service in Ghamaria</title>
+    <meta name="description" content="Learn about Annapurna Delights, a trusted home-style mess in Ghamaria serving fresh, hygienic, and delicious meals every day." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="glass-nav sticky top-0 z-50">
+      <nav class="container mx-auto flex items-center justify-between px-4 py-4 md:px-8">
+        <a href="index.html" class="brand-mark flex items-center gap-3 font-display text-lg font-semibold text-ink">
+          <img src="images/logo.png" alt="Annapurna Delights logo" class="brand-logo" />
+          <span>Annapurna Delights</span>
+        </a>
+        <button class="mobile-toggle md:hidden" id="mobileToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="hidden items-center gap-8 md:flex" id="navMenu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link active">About</a>
+          <a href="menu.html" class="nav-link">Menu</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="contact.html" class="btn btn-primary">Order Now</a>
+        </div>
+      </nav>
+      <div class="mobile-menu md:hidden" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero py-20">
+        <div class="container mx-auto grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div data-aos="fade-right">
+            <p class="section-eyebrow">About Us</p>
+            <h1 class="section-title">A premium home-style meal service crafted around trust and daily comfort.</h1>
+            <p class="section-copy mt-6">We blend old-school kitchen warmth with a modern delivery experience, making healthy meals feel personal, dependable, and beautifully simple.</p>
+          </div>
+          <div class="glass-panel p-8" data-aos="fade-left">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="about-stat-card" data-aos="fade-up">
+                <div class="about-stat-icon"><i class="fa-solid fa-star"></i></div>
+                <div class="about-stat-number"><span class="counter" data-count="2">0</span><span class="about-stat-suffix">+</span></div>
+                <p class="mt-2 text-sm text-slate-600">Years of Experience</p>
+              </div>
+              <div class="about-stat-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="about-stat-icon"><i class="fa-solid fa-utensils"></i></div>
+                <div class="about-stat-number"><span class="counter" data-count="5000">0</span><span class="about-stat-suffix">+</span></div>
+                <p class="mt-2 text-sm text-slate-600">Meals Served</p>
+              </div>
+              <div class="about-stat-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="about-stat-icon"><i class="fa-solid fa-face-smile"></i></div>
+                <div class="about-stat-number"><span class="counter" data-count="1500">0</span><span class="about-stat-suffix">+</span></div>
+                <p class="mt-2 text-sm text-slate-600">Happy Customers</p>
+              </div>
+              <div class="about-stat-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="about-stat-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="about-stat-number about-stat-compact">Serving Across</div>
+                <p class="about-stat-subtext">Ghamaria, Lal Building & Usha More</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section py-16">
+        <div class="container mx-auto grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div class="glass-panel p-8" data-aos="fade-right">
+            <h2 class="section-title">A founder’s story</h2>
+            <p class="section-copy mt-4">Rahul Mandal created Annapurna Delights after noticing that busy families and students deserved meals that were nutritious, comforting, and beautifully presented without the hassle of daily cooking.</p>
+          </div>
+          <div class="glass-panel p-8" data-aos="fade-left">
+            <h3 class="font-display text-2xl font-semibold">Our promise</h3>
+            <ul class="mt-4 space-y-3 text-slate-600">
+              <li><i class="fa-solid fa-check text-primary"></i> Freshly cooked meals every day</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Balanced flavors and healthy portions</li>
+              <li><i class="fa-solid fa-check text-primary"></i> Transparent service and premium packaging</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer py-16">
+      <div class="container mx-auto grid gap-10 lg:grid-cols-[1.1fr_0.9fr_0.8fr]">
+        <div>
+          <h3 class="font-display text-2xl font-semibold">Annapurna Delights</h3>
+          <p class="mt-4 max-w-md text-slate-600">Fresh meals, prepared with warmth and delivered with precision.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold">Quick Links</h4>
+          <ul class="mt-4 space-y-2 text-slate-600">
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold">Contact</h4>
+          <ul class="mt-4 space-y-2 text-slate-600">
+            <li><i class="fa-solid fa-phone"></i> +91 96082 87327</li>
+            <li><i class="fa-solid fa-envelope"></i> hello@annapurnadelights.com</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.0/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

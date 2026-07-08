@@ -1,0 +1,9 @@
+.reveal { opacity:0; transform:translateY(26px); }
+.section.visible .reveal { opacity:1; transform:none; }
+
+.fade-up { animation:fadeUp .8s ease forwards; }
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to { opacity:1; transform:none; }
+}

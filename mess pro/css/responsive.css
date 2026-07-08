@@ -1,0 +1,12 @@
+@media (max-width: 768px) {
+  .hero h1 { font-size: clamp(2.4rem, 8vw, 3.5rem); }
+  .floating-btn { width:48px; height:48px; }
+  .promo-banner { width:min(92vw, 480px); border-radius:20px; padding:.8rem 1rem; }
+  .weekly-grid { grid-template-columns:1fr; }
+  .floating-btn.call { bottom:10.5rem; }
+  .floating-btn.top { bottom:16.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .section { padding-block: 6rem; }
+}
